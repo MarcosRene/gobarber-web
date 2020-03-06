@@ -33,4 +33,11 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
   },
+  settings: {
+    "import/resolver": {
+      "babel-eslint-root-import": {
+        rootPathSuffix: "src",
+      },
+    },
+  },
 };
