@@ -5,12 +5,17 @@ const INITIAL_STATE = {
 };
 
 export default function user(state = INITIAL_STATE, aciton) {
-  switch (aciton.type) {
-    case '@auth/SIGN_IN_SUCCESS':
-      return produce(state, draft => {
+  return produce(state, draft => {
+    switch (aciton.type) {
+      case '@auth/SIGN_IN_SUCCESS': {
         draft.profile = aciton.payload.user;
-      });
-    default:
-      return state;
-  }
+        break;
+      }
+      case '@auth/UPDATE_PROFILE_SUCESS': {
+        draft.profile = aciton.payload.profile;
+        break;
+      }
+      default:
+    }
+  });
 }
